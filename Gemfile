@@ -48,3 +48,6 @@ end
 
 gem 'bootstrap', '~> 4.0.0.beta'
 
+group :test do
+  gem "nyan-cat-formatter"
+end
