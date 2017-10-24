@@ -42,7 +42,7 @@ end
 
 describe "POST create" do
   it "increses the number of Post by 1" do
-    expect{ post :create, params: {title: RandomData.random_sentence, body: RandomData.random_paragraph } } }.to change(Post,:count).by(1)
+    expect{ post :create, params: { post: { title: RandomData.random_sentence, body: RandomData.random_paragraph } } }.to change(Post,:count).by(1)
   end
 
   it "assigns the new post to @post" do
