@@ -30,7 +30,7 @@ RSpec.describe PostsController, type: :controller do
    it "assigns my_post to @post" do
      get :show, params: { id: my_post.id }
      expect(assigns(:post)).to eq(my_post)
-  end
+   end
  end
 
  describe "GET new" do
@@ -42,13 +42,13 @@ RSpec.describe PostsController, type: :controller do
    it "renders the #new view" do
     get :new
     expect(response).to render_template :new
-  end
+    end
 
-  it "instantiates @post" do
-    get :new
-    expect(assigns(:post)).not_to be_nil
+    it "instantiates @post" do
+      get :new
+      expect(assigns(:post)).not_to be_nil
+    end
   end
-end
 
 describe "POST create" do
   it "increses the number of Post by 1" do
@@ -64,7 +64,7 @@ describe "POST create" do
     post :create, params: { post: { title: RandomData.random_sentence, body: RandomData.random_paragraph } }
     expect(response).to redirect_to Post.last
   end
- end
+end
 
 # describe "GET edit" do
 #   it "returns http success" do
