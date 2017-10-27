@@ -44,10 +44,9 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to render_template :new
       end
 
-      it "instantiates @post" do
-        get :new
-        expect(assigns(:post)).not_to be_nil
-      end
+    it "instantiates @post" do
+      get :new
+      expect(assigns(:post)).not_to be_nil
     end
   end
 
@@ -89,4 +88,39 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  describe "PUT update" do
+    it "updates post with expected attributes" do
+      new_title = RandomData.random_sentence
+      new_body = RandomData.random_paragraph
+
+      put :update, params: { id: my_post.id, post: {title: new_title, body: new_body } }
+
+      updated_post = assigns(:post)
+      expect(updated_post.id).to eq my_post.id
+      expect(updated_post.title).to eq new_title
+      expect(updated_post.body).to eq new_body
+    end
+
+    it "redirects to the updated post" do
+      new_title = RandomData.random_sentence
+      new_body = RandomData.random_paragraph
+
+      put :update, params: { id: my_post.id, post: {title: new_title, body: new_body } }
+      expect(response).to redirect_to my_post
+    end
+  end
+
+  describe "DELETE destroy" do
+    it "deletes the post" do
+      delete :destroy, params: { id: my_post.id }
+
+      count = Post.where({id: my_post.id}).size
+      expect(count).to eq 0
+    end
+
+    it "redirects to posts index" do
+      delete :destroy, params: { id: my_post.id }
+      expect(response).to redirect_to posts_path
+    end
+  end
 end
