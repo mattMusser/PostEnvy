@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.4.1"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -7,6 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
+
+
 
 # #1
 group :production do
@@ -49,6 +52,3 @@ end
 
 gem 'bootstrap', '~> 4.0.0.beta'
 
-group :test do
-  gem "nyan-cat-formatter"
-end
