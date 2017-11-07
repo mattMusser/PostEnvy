@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.4.1"
+ruby "2.4.2"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -45,10 +45,10 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '3.6.1'
   gem 'rails-controller-testing'
   gem 'shoulda'
 end
 
 gem 'bootstrap', '~> 4.0.0.beta'
-
+gem 'fuubar'

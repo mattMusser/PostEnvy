@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   let(:my_topic) { Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph) }
-  let(:my_topic) { my_topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph) }
+  let(:my_post) { my_topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph) }
 
   describe "GET show" do
     it "returns http success" do
@@ -50,7 +50,7 @@ RSpec.describe PostsController, type: :controller do
 
     it "redirects to the new post" do
       post :create, params: { topic_id: my_topic.id, post: { title: RandomData.random_sentence, body: RandomData.random_paragraph } }
-      expect(response).to redirect_to [my_topic. Post.last]
+      expect(response).to redirect_to [my_topic, Post.last]
     end
   end
 
@@ -61,7 +61,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "renders the #edit view" do
-      get :edit, topic_id: my_topic.id, id: my_post.id
+      get :edit, params: { topic_id: my_topic.id, id: my_post.id }
       expect(response).to render_template :edit
     end
 
