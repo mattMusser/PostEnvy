@@ -51,4 +51,9 @@ group :development, :test do
 end
 
 gem 'bootstrap', '~> 4.0.0.beta'
+
+# Rspec formatter
 gem 'fuubar'
+
+# Used for encrypting passwords
+gem 'bcrypt'
