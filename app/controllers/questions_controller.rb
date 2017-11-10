@@ -19,6 +19,7 @@ class QuestionsController < ApplicationController
     else
       flash[:error] = "There was an error saving your question. Please try again."
       render :new
+    end
   end
 
   def edit
@@ -33,7 +34,7 @@ class QuestionsController < ApplicationController
     else
       flash[:error] = "There was an error saving your question. Please try again."
       render:edit
-    end 
+    end
   end
 
   def destroy
