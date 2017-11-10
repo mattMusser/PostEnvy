@@ -1,6 +1,11 @@
 <h1><%= @question.title %></h1>
 <p><%= @question.body %></p>
-<p><%= @question.resolved %></p>
+</br>
+<% if @question.resolved == true %>
+	<p><strong>The question has been answered.</strong></p>
+<% else %>
+	<p><strong>The question hasn't been answered.</strong></p>
+<% end %>
 
 <div class="col-md-4">
 	<%= link_to "Edit", edit_question_path(@question), class: 'btn btn-success' %>
