@@ -19,10 +19,20 @@ module RandomData
 		sentence.capitalize << "."
 	end
 
+	def self.random_sponsored_title
+		strings_one = []
+		1.times do
+			strings_one << random_word
+		end
+
+		sponsored_sentence = strings_one.join(" ")
+		sponsored_sentence.capitalize << ".    (SPONSORED POST)"
+	end
+
 	def self.random_word
 		letters = ('a'..'z').to_a
 		letters.shuffle!
-		letters[0,rand(3..8)].join 
+		letters[0,rand(3..8)].join
 		# Join the zeroth through nth item in letters
 		# The nth item is the result of rand*3..8)
 		# which returns a random number >= three & < 8.
