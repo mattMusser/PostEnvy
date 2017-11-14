@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
 
 	def new
 		@topic = Topic.new
-		@sponsored_post = Sponsoredpost.new
+		@sponsored_post = SponsoredPost.new
 	end
 
 	def create

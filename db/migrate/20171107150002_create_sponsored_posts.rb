@@ -1,4 +1,4 @@
-class CreateSponsoredposts < ActiveRecord::Migration[5.1]
+class CreateSponsoredPosts < ActiveRecord::Migration[5.1]
   def change
     create_table :sponsoredposts do |t|
       t.string :title
