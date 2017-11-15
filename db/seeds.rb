@@ -38,7 +38,7 @@ sponsored_posts = SponsoredPost.all
 end
 
 puts "Seed finished"
-puts "#{Topic.count} topics created"
-puts "#{Post.count} posts created"
-puts "#{Comment.count} comments created"
-puts "#{SponsoredPost.count} sponsored posts created"
+puts "Total Topics: #{Topic.count}"
+puts "Total Posts: #{Post.count}"
+puts "Total Comments: #{Comment.count}"
+puts "Total Sponsored Posts: #{SponsoredPost.count}"
