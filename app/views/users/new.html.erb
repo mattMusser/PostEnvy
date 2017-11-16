@@ -25,7 +25,7 @@
 			<% end %>
 			<%= form_group_tag(@user.errors[:password]) do %>
 				<%= f.label :password %>
-				<%= f.password_field :password, class 'form-control', placeholder: "Enter password" %>
+				<%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
 			<% end %>
 			<%= form_group_tag(@user.errors[:password_confirmation]) do %>
 				<%= f.label :password_confirmation %>
