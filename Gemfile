@@ -56,4 +56,4 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'fuubar'
 
 # Used for encrypting passwords
-gem 'bcrypt'
+gem 'bcrypt', '~> 3.1.7'

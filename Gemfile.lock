@@ -186,7 +186,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt
+  bcrypt (~> 3.1.7)
   bootstrap (~> 4.0.0.beta)
   fuubar
   jbuilder (~> 2.5)
