@@ -3,6 +3,12 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+	def confirm
+		@user = User.new
+		@user.name = params[:user][:name]
+		@user.email = params[:user][:email]
+	end
+
 	def create
 	# Create a new user with new and set the corresponding attributes from the params hash.
 		@user = User.new
@@ -19,12 +25,6 @@ class UsersController < ApplicationController
 			flash.now[:alert] = "There was an error creating your account. Please try again."
 			render :new
 		end
-	end
-
-	def confirm
-		@user = User.new
-		@user.name = params[:user][:name]
-		@user.email = params[:user][:email]
 	end
 
 end
