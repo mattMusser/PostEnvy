@@ -15,16 +15,18 @@
         <li class="nav-item"><%= link_to "PostEnvy", root_path, class: 'nav-link' %></li>
         <li class="nav-item"><%= link_to "Topics", topics_path, class: 'nav-link' %></li>
         <li class="nav-item"><%= link_to "About", about_path, class: 'nav-link' %></li>
-        <% if current_user %>
-          <li class="float-right"><%= link_to "#{current_user.name} -Sign Out", session_path(current_user), method: :delete %></li>
-        <% else %>
-          <li class="float-right"><%= link_to "Sign In", new_session_path %></li>
-          <li class="float-right"><%= link_to "Sign Up", new_user_path %></li>
-        <% end %>
+        <div class="float-right user">
+          <% if current_user %>
+            <%= image_tag avatar_url(current_user), class: :gravatar %>
+            <div class="float-right">
+              <li class="float-right"><%= link_to "#{current_user.name} -Sign Out", session_path(current_user), method: :delete %></li>
+            </div>
+          <% else %>
+            <li class="float-right" user-link><%= link_to "Sign In", new_session_path %></li>
+            <li class="float-right" user-link><%= link_to "Sign Up", new_user_path %></li>
+          <% end %>
+        </div>
       </ul>
-      <!--<ul class="nav nav-tabs float-right">
-        <li class="nav-item"><%= link_to "Sign Up", new_user_path, class: 'nav-link' %></li>
-      </ul>-->
 
       <% if flash[:notice] %>
         <div class="alert alert-success">
