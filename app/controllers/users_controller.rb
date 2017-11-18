@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 	# Save the new user to the db. If the db save is successful, add a flash message and then redirect the user to the root path
 		if @user.save
 			flash[:notice] = "Welcome to PostEnvy #{@user.name}!"
+			create_session(@user)
 			redirect_to root_path
 	# Otherwise, display an error and render the new view.
 		else
