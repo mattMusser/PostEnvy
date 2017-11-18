@@ -1,4 +1,13 @@
 module RandomData
+	def self.random_name
+		first_name = random_word.capitalize
+		last_name = random_word.capitalize
+		"#{first_name} #{last_name}"
+	end
+
+	def self.random_email
+		"#{random_word}@#{random_word}.#{random_word}"
+	end
 
 	def self.random_paragraph
 		sentences  = []
@@ -22,7 +31,7 @@ module RandomData
 	def self.random_word
 		letters = ('a'..'z').to_a
 		letters.shuffle!
-		letters[0,rand(3..8)].join 
+		letters[0,rand(3..8)].join
 		# Join the zeroth through nth item in letters
 		# The nth item is the result of rand*3..8)
 		# which returns a random number >= three & < 8.
