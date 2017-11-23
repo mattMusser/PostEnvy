@@ -323,7 +323,7 @@ RSpec.describe TopicsController, type: :controller do
 
 		describe "GET edit" do
 			it "returns http success" do
-				get :edit, pararms: { id: my_topic.id }
+				get :edit, params: { id: my_topic.id }
 				expect(response).to have_http_status(:success)
 			end
 
@@ -351,8 +351,8 @@ RSpec.describe TopicsController, type: :controller do
 
 				updated_topic = assigns(:topic)
 				expect(updated_topic.id).to eq my_topic.id
-				expect(updated_topic.name).to eq my_topic.name
-				expect(updated_topic.description).to eq my_topic.description
+				expect(updated_topic.name).to eq new_name
+				expect(updated_topic.description).to eq new_description
 			end
 
 			it "redirects to the updated topic" do
@@ -366,7 +366,7 @@ RSpec.describe TopicsController, type: :controller do
 
 		describe "DELETE destroy" do
 			it "returns http redirect" do
-				delete :destroy, { id: my_topic.id }
+				delete :destroy, params: { id: my_topic.id }
 				expect(response).to redirect_to(topics_path)
 			end
 		end
