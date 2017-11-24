@@ -57,3 +57,6 @@ gem 'fuubar'
 
 # Used for encrypting passwords
 gem 'bcrypt', '~> 3.1.7'
+
+# Font Awesome
+gem 'font-awesome-rails'
