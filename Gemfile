@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rspec-rails', '3.6.1'
   gem 'rails-controller-testing'
   gem 'shoulda'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 gem 'bootstrap', '~> 4.0.0.beta'
