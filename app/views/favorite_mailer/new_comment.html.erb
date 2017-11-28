@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-type" />
+	</head>
+	<body>
+		<h1>New comment to "<%= @post.title %>"</h1>
+		<small>
+			<%= @comment.user.name %>
+		</small>
+		<p>
+			<%= @comment.body %>
+		</p>
+		<p>
+<!--	topic_post_url generates an absolute Url -->
+			<% link_to "View Comment on PostEnvy", topic_post_url(@post.topic, @post, anchor: "comment-#{@comment.id}") %>
+		</p>
+	</body>
+</html>

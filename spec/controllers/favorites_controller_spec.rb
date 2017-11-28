@@ -1,4 +1,6 @@
 require 'rails_helper'
+include SessionsHelper
+
 
 RSpec.describe FavoritesController, type: :controller do
 	let(:my_user) { User.create!(name: "PostEnvy User", email: "user@postenvy.com", password: "helloworld") }
@@ -51,7 +53,7 @@ RSpec.describe FavoritesController, type: :controller do
 				favorite = my_user.favorites.where(post: my_post).create
 				expect(my_user.favorites.find_by_post_id(my_post.id)).not_to be_nil
 				delete :destroy, params: { post_id: my_post.id, id: favorite.id }
-				expect(my_user.favorites.find_by_post_id(my_post.id).to be_nil)
+				expect(my_user.favorites.find_by_post_id(my_post.id)).to be_nil
 			end
 		end
 	end

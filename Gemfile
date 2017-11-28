@@ -52,11 +52,14 @@ end
 
 gem 'bootstrap', '~> 4.0.0.beta'
 
-# Rspec formatter
+# Used to format Rspec
 gem 'fuubar'
 
 # Used for encrypting passwords
 gem 'bcrypt', '~> 3.1.7'
 
-# Font Awesome
+# Access to fonts from Font Awesome
 gem 'font-awesome-rails'
+
+# Used for handling sensitive data with evironment variables
+gem'figaro', '1.0'
