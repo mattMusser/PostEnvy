@@ -42,19 +42,18 @@ posts = Post.all
 end
 
 # Create an admin user
-admin = User.create!(
-	name: 		'Admin User',
-	email: 		'admin@example.com',
-	password: 'helloworld',
-	role: 		'admin'
-)
+admin = User.find_or_create_by!(email: 'admin@example.com') do |user|
+	user.name = 		'Admin User'
+	user.password = 'helloworld'
+	user.role = 		'admin'
+end
 
 # Create a member
-member = User.create!(
-	name: 		'Member User',
-	email:		'member@example.com',
-	password: 'helloworld'
-)
+member = User.find_or_create_by!(email: 'member@example.com') do |user|
+	name = 		       'Member User'
+	password = 			 'helloworld'
+	role =					 'member'
+end
 
 puts "Seed finished"
 puts "#{User.count} total users"
