@@ -1,0 +1,11 @@
+<html>
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-type" />
+	</head>
+	<body>
+		<h1>You're now following "<%= @post.title %>", you will be sent an email whenever their are new comments. Please unfavorite your <%= link_to "post", topic_post_url(@post.topic, @post) %> if you wish not to recieve further emails.</h1>
+		<p>
+			<%= link_to "View Post on Site", topic_post_url(@post.topic, @post) %>
+		</p>
+	</body>
+</html>
