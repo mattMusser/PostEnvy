@@ -50,9 +50,9 @@ end
 
 # Create a member
 member = User.find_or_create_by!(email: 'member@example.com') do |user|
-	name = 		       'Member User'
-	password = 			 'helloworld'
-	role =					 'member'
+	user.name = 		       'Member User'
+	user.password = 			 'helloworld'
+	user.role =					 	 'member'
 end
 
 puts "Seed finished"
