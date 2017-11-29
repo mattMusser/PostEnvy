@@ -81,6 +81,5 @@ RSpec.describe UsersController, type: :controller do
 			get :show, {id: factory_user.id}
 			expect(assigns(:user)).to eq(factory_user)
 		end
-
 	end
 end

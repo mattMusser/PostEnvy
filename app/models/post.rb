@@ -5,10 +5,10 @@ class Post < ApplicationRecord
 	has_many :votes, dependent: :destroy
 	has_many :favorites, dependent: :destroy
 
-# Orders all posts by their created_at date, in descending order, with the most recent posts displayed first.
+
 	default_scope { order('rank DESC') }
 	scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
-	
+
 	validates :title, length: { minimum: 5 }, presence: true
 	validates :body, length: { minimum: 20 }, presence: true
 	validates :topic, presence: true

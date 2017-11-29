@@ -6,11 +6,11 @@ RSpec.describe Post, type: :model do
   let(:title) { RandomData.random_sentence }
   let(:body) { RandomData.random_paragraph }
 # Creates a parent topic for post
-  let(:topic) { Topic.create!(name: name, description: description) }
+  let(:topic) { create(:topic) }
 # Creates a user to associate with a test post
-  let(:user) { User.create!(name: "PostEnvy User", email: "user@postenvy.com", password: "hellowworld") }
+  let(:user) { create(:user) }
 # Associates user with post when the test post is created
-  let(:post) { topic.posts.create!(title: title, body: body, user: user) }
+  let(:post) { create(:post) }
 
   it { is_expected.to have_many(:comments) }
   it { is_expected.to have_many(:votes) }
@@ -28,7 +28,7 @@ RSpec.describe Post, type: :model do
 
   describe "attributes" do
     it "has a title, body, and user attributes" do
-      expect(post).to have_attributes(title: title, body: body, user: user)
+      expect(post).to have_attributes(title: post.title, body: post.body)
     end
   end
 
