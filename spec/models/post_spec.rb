@@ -10,7 +10,7 @@ RSpec.describe Post, type: :model do
 # Creates a user to associate with a test post
   let(:user) { User.create!(name: "PostEnvy User", email: "user@postenvy.com", password: "hellowworld") }
 # Associates user with post when the test post is created
-  let(:post) { topic.posts.create!(title: title, body: body, user: user) }
+  let(:post) { topic.posts.create!(title: title, body: body  , user: user) }
 
   it { is_expected.to have_many(:comments) }
   it { is_expected.to have_many(:votes) }
@@ -78,7 +78,8 @@ RSpec.describe Post, type: :model do
 
     describe "#create_vote" do
       it "sets the post up_votes to 1" do
-        expect(post.up_votes).to eq(1)
+        isolated_post = topic.posts.create!(title: title, body: body  , user: user)
+        expect(isolated_post.up_votes).to eq(1)
       end
 
       it "calls #create_vote when a post is created" do
