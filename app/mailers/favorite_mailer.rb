@@ -2,9 +2,9 @@ class FavoriteMailer < ApplicationMailer
 	default from: "webdevelopmentlyspeaking+postenvy@gmail.com"
 
 	def new_comment(user, post, comment)
-		headers["Message-ID"] = "<comments/#{comment.id}@mysterious-hollows-63236.herokuapp.com>"
-		headers["In-Reply-To"] = "<post/#{post.id}@mysterious-hollows-63236.herokuapp.com>"
-		headers["References"] = "<post/#{post.id}@mysterious-hollows-63236.herokuapp.com>"
+		headers["Message-ID"] = "<comments/#{comment.id}@your-app-name.example>"
+		headers["In-Reply-To"] = "<post/#{post.id}@your-app-name.example>"
+		headers["References"] = "<post/#{post.id}@your-app-name.example>"
 
 		@user = user
 		@post = post
@@ -14,9 +14,9 @@ class FavoriteMailer < ApplicationMailer
 	end
 
 	def new_post(post)
-		headers["Message-ID"] = "<comments/#{comment.id}@mysterious-hollows-63236.herokuapp.com>"
-		headers["In-Reply-To"] = "<post/#{post.id}@mysterious-hollows-63236.herokuapp.com>"
-		headers["References"] = "<post/#{post.id}@mysterious-hollows-63236.herokuapp.com>"
+		headers["Message-ID"] = "<comments/#{post.id}@your-app-name.example>"
+		headers["In-Reply-To"] = "<post/#{post.id}@your-app-name.example>"
+		headers["References"] = "<post/#{post.id}@your-app-name.example>"
 
 		@post = post
 
