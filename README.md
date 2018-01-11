@@ -20,7 +20,7 @@ HTML5, CSS3, Bootstrap, Rails 5.1.4, PostgresSQL, RSpec, Gravtar, Heroku
 
 Prerequisites: Ruby on Rails 5.1.4
 
-* Fork and CLone Repository
+* Fork and Clone Repository
 * In the root run
 ```
 bundle install --without production
