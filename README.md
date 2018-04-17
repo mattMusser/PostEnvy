@@ -1,44 +1,49 @@
 # PostEnvy
 
-A Reddit replica to teach the fundamentals of web development and Rails.
+PostEnvy is a Railsa app that allows users to post various content and comment on posts.
 
-## How
+Deployed at: https://postenvy.herokuapp.com
 
-### Ruby on Rails
+## Features
 
-PostEnvy is built with Rails 4.2.5 and PostgresSQL. The application allows users to post content and comment on posts. Each post can be listed as a "Favorite" and voted up or down. Each user has the ability to view their profile and see their posts and comments.
+- Users can sign up for an account and veiw their activity (posts, comments, and favorites).
+- Users can comment on posts with their thoughts, opinions, and insights.
+- Users can mark posts as favorites to get notified of new comments or changes to the post.
+- Admins can alter or delete any post.
 
-### Test Driven Development (TDD)
+## Built With
 
-I built this application with the principles of TDD; red, green, refactor. Create the tests (red), create the code to make the tests work (green), then refactor as needed. All testing is done with RSpec.
+- HTML5
+- CSS3
+- Bootstrap
+- Ruby
+- Rails 5.1.4
+- Bcrypt
+- Font Awesome
+- Rspec
+- Figaro
+- Factory Bot
+- Gravtar
 
-## Tech
+## Installation
 
-HTML5, CSS3, Bootstrap, Rails 5.1.4, PostgresSQL, RSpec, Gravtar, Heroku
+If you want to install PostEnvy locally, you need to make sure you have Ruby installed on your machine, and then fork and clone this repository. After you have cloned the repository locally, use bundler to install dependencies.
 
-## Run Locally
+```bash
+#if needed
+gem install bundle
 
-Prerequisites: Ruby on Rails 5.1.4
-
-* Fork and Clone Repository
-* In the root run
+bundle install
 ```
-bundle install --without production
+After that you will need to set up the databases.
+```bash
+rails db:setup
 ```
-* Set-up the database:
-```
-rake db:create
-rake db:migrate
-rake db:seed
-```
-* Serve the app
-```
+Start up the local development server adn vistit the default port at `http://localhost:3000'.
+```bash
 rails s
 ```
-* View the site at localhost:3000
 
-## Who
-
-Created and maintained by [Matt Musser](http://www.github.com/mattMusser)
-
+## Author
+Matt Musser
 
